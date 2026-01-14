@@ -1,0 +1,182 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design System - Escritório de Contabilidade Premium */
+
+@layer base {
+	:root {
+		/* Core Colors - Sophisticated Accounting Firm */
+		--background: 0 0% 0%;
+		--foreground: 0 0% 0%;
+		--card: 0 0% 96%;
+		--card-foreground: 0 0% 0%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 0 0% 0%;
+		/* Primary - Muted Gold */
+		--primary: 43 56% 52%;
+		--primary-foreground: 0 0% 0%;
+		/* Secondary - Dark Gray */
+		--secondary: 0 0% 18%;
+		--secondary-foreground: 0 0% 96%;
+		--muted: 0 0% 95%;
+		--muted-foreground: 0 0% 40%;
+		/* Accent - Gold highlight */
+		--accent: 43 56% 52%;
+		--accent-foreground: 0 0% 0%;
+		--destructive: 0 84% 60%;
+		--destructive-foreground: 0 0% 98%;
+		--border: 0 0% 85%;
+		--input: 0 0% 85%;
+		--ring: 43 56% 52%;
+		--radius: 0.375rem;
+		/* Custom tokens */
+		--gold: 43 56% 52%;
+		--gold-light: 43 50% 62%;
+		--gold-dark: 43 60% 42%;
+		--charcoal: 0 0% 18%;
+		--charcoal-light: 0 0% 25%;
+		--off-white: 0 0% 96%;
+		--pure-black: 0 0% 0%;
+		/* Gradients */
+		--gradient-gold: linear-gradient(135deg, hsl(43 56% 52%), hsl(43 50% 62%));
+		--gradient-dark: linear-gradient(180deg, hsl(0 0% 0%), hsl(0 0% 18%));
+		--gradient-hero: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 12%) 50%, hsl(0 0% 8%) 100%);
+		/* Shadows */
+		--shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.1);
+		--shadow-gold: 0 4px 20px -4px hsl(43 56% 52% / 0.3);
+		--shadow-card: 0 8px 30px -8px hsl(0 0% 0% / 0.12);
+		--shadow-elevated: 0 20px 50px -15px hsl(0 0% 0% / 0.2);
+		/* Sidebar */
+		--sidebar-background: 0 0% 98%;
+		--sidebar-foreground: 0 0% 25%;
+		--sidebar-primary: 0 0% 10%;
+		--sidebar-primary-foreground: 0 0% 98%;
+		--sidebar-accent: 0 0% 95%;
+		--sidebar-accent-foreground: 0 0% 10%;
+		--sidebar-border: 0 0% 91%;
+		--sidebar-ring: 43 56% 52%;
+	}
+	.dark {
+		--background: 0 0% 5%;
+		--foreground: 0 0% 96%;
+		--card: 0 0% 10%;
+		--card-foreground: 0 0% 96%;
+		--popover: 0 0% 8%;
+		--popover-foreground: 0 0% 96%;
+		--primary: 43 56% 52%;
+		--primary-foreground: 0 0% 0%;
+		--secondary: 0 0% 18%;
+		--secondary-foreground: 0 0% 96%;
+		--muted: 0 0% 15%;
+		--muted-foreground: 0 0% 60%;
+		--accent: 43 56% 52%;
+		--accent-foreground: 0 0% 0%;
+		--destructive: 0 62% 30%;
+		--destructive-foreground: 0 0% 98%;
+		--border: 0 0% 20%;
+		--input: 0 0% 20%;
+		--ring: 43 56% 52%;
+		--sidebar-background: 0 0% 8%;
+		--sidebar-foreground: 0 0% 95%;
+		--sidebar-primary: 43 56% 52%;
+		--sidebar-primary-foreground: 0 0% 0%;
+		--sidebar-accent: 0 0% 15%;
+		--sidebar-accent-foreground: 0 0% 95%;
+		--sidebar-border: 0 0% 15%;
+		--sidebar-ring: 43 56% 52%;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-background text-foreground antialiased;
+		font-family: 'Source Sans 3', system-ui, sans-serif;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Playfair Display', serif;
+		@apply font-semibold tracking-tight;
+	}
+}
+
+@layer components {
+	/* Gold Underline Effect */
+	.gold-underline {
+		@apply relative inline-block;
+	}
+  
+	.gold-underline::after {
+		content: '';
+		@apply absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 origin-left transition-transform duration-300;
+	}
+  
+	.gold-underline:hover::after {
+		@apply scale-x-100;
+	}
+
+	/* Section Title */
+	.section-title {
+		@apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4;
+	}
+
+	.section-subtitle {
+		@apply text-muted-foreground text-lg md:text-xl max-w-2xl;
+	}
+
+	/* Card Hover Effect */
+	.card-hover {
+		@apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+	}
+
+	/* Gold Button */
+	.btn-gold {
+		@apply bg-primary text-primary-foreground px-6 py-3 rounded font-semibold transition-all duration-300;
+		@apply hover:brightness-110 hover:shadow-lg;
+	}
+
+	/* Outline Button */
+	.btn-outline-gold {
+		@apply border-2 border-primary text-primary px-6 py-3 rounded font-semibold transition-all duration-300;
+		@apply hover:bg-primary hover:text-primary-foreground;
+	}
+
+	/* Dark Section */
+	.section-dark {
+		@apply bg-secondary text-secondary-foreground;
+	}
+
+	/* Container */
+	.container-custom {
+		@apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+	}
+}
+
+@layer utilities {
+	.text-gradient-gold {
+		@apply bg-clip-text text-transparent;
+		background-image: var(--gradient-gold);
+	}
+
+	.bg-gradient-hero {
+		background: var(--gradient-hero);
+	}
+
+	.shadow-gold {
+		box-shadow: var(--shadow-gold);
+	}
+
+	.shadow-elevated {
+		box-shadow: var(--shadow-elevated);
+	}
+}

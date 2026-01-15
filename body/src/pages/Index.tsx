@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import QuickAccess from "@/components/QuickAccess";
 import AuthorityBanner from "@/components/institutional/AuthorityBanner";
 import Clients from "@/components/Clients";
-import CaseStudies from "@/components/institutional/CaseStudies";
 import ComplianceScore from "@/components/widgets/ComplianceScore";
 import DynamicInsights from "@/components/widgets/DynamicInsights";
 import ResourceLibrary from "@/components/widgets/ResourceLibrary";
@@ -28,7 +27,6 @@ const Index = () => {
         {/* Link para página Dúvidas */}
         {/* Link para página Informativos */}
         <Clients />
-        <CaseStudies />
         <ComplianceScore />
         <DynamicInsights />
         <ResourceLibrary />

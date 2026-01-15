@@ -26,7 +26,7 @@ const ComplianceScore: React.FC = () => {
   };
 
   return (
-    <section id="metodo" className="py-24 bg-navy-dark text-white">
+    <section id="metodo" className="py-16 bg-navy-dark text-white">
       <div className="container mx-auto px-6">
         <div className="flex flex-wrap items-center gap-16">
           <div className="w-full lg:w-1/2">

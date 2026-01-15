@@ -57,13 +57,17 @@ const About = () => {
             </div>
           </motion.div>
 
+          {/* Texto centralizado de experiência */}
+          <div className="w-full flex justify-center mb-4">
+            <span className="text-2xl md:text-3xl font-bold text-primary text-center">Mais de 25 anos de experiência</span>
+          </div>
           {/* Stats Cards */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-2 gap-6"
+            className="flex flex-col md:flex-row justify-center items-center gap-6"
           >
             <div className="bg-secondary text-secondary-foreground p-8 rounded-lg">
               <Users className="w-10 h-10 text-primary mb-4" />

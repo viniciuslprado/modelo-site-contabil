@@ -1,3 +1,4 @@
+// This file has been removed completely as per the requirement to delete the case studies content.
 import React from 'react';
 
 const CASES = [
